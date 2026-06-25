@@ -1,0 +1,187 @@
+/* PresenceSection.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.presence-section {
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(50px, 6vw, 70px) 0 clamp(50px, 6vw, 70px);
+  font-family: 'Poppins', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.presence-heading {
+  margin-bottom: 20px;
+}
+
+.presence-heading h5 {
+  margin: 0 0 10px;
+  color: #3f2c9f;
+  font-size: clamp(10px, 0.9vw, 11px);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.presence-heading h2 {
+  margin: 0;
+  color: #000000;
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.presence-heading h2 span {
+  color: #3f2c9f;
+}
+
+/* ── Map with premium hover ── */
+.presence-map {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+/* Glow ring behind map on hover */
+.presence-map::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(63, 44, 159, 0.10) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.66);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.presence-map:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.presence-map img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  z-index: 1;
+  /* Smooth lift + slight scale on hover */
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.5s ease;
+  filter: drop-shadow(0 8px 24px rgba(63, 44, 159, 0.08));
+}
+
+.presence-map:hover img {
+  transform: translateY(-10px) scale(1.03);
+  filter: drop-shadow(0 20px 40px rgba(63, 44, 159, 0.18));
+}
+
+/* ── Stats box ── */
+.presence-stats {
+  width: 100%;
+  max-width: 780px;
+  padding: clamp(22px, 3vw, 36px) clamp(16px, 3vw, 32px);
+  border: 1px solid #ede8fb;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 18px rgba(63, 44, 159, 0.05);
+}
+
+.presence-stat-box {
+  text-align: center;
+  padding: 16px 8px;
+  border-radius: 12px;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.presence-stat-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: #faf8ff;
+  box-shadow: 0 16px 36px rgba(63, 44, 159, 0.12);
+}
+
+.presence-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #ede8fb;
+  color: #3f2c9f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.presence-stat-box:hover .presence-icon {
+  background: #3f2c9f;
+  color: #ffffff;
+  transform: scale(1.15) rotate(8deg);
+}
+
+.presence-icon svg {
+  font-size: 20px;
+}
+
+.presence-stat-box h3 {
+  margin: 0 0 4px;
+  color: #0a0a0a;
+  font-size: clamp(20px, 2vw, 24px);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.presence-stat-box p {
+  margin: 0;
+  color: #555555;
+  font-size: clamp(11px, 1.1vw, 13px);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .presence-map {
+    max-width: 480px;
+  }
+
+  .presence-map img {
+    max-height: 300px;
+  }
+
+  .presence-map:hover img {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@media (max-width: 576px) {
+  .presence-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 10px;
+  }
+
+  .presence-icon svg {
+    font-size: 17px;
+  }
+
+  .presence-stat-box:hover {
+    transform: none;
+  }
+
+  .presence-map:hover img {
+    transform: none;
+  }
+}

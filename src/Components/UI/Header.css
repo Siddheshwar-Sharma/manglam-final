@@ -1,0 +1,485 @@
+/* =========================
+   HEADER
+========================= */
+
+html.menu-lock,
+body.menu-lock {
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  background: linear-gradient(90deg, #4d3a83 0%, #7869a8 50%, #514184 100%);
+  border-bottom: none;
+}
+
+.header-container {
+  width: 100%;
+  height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 62px;
+  background: linear-gradient(90deg, #4d3a83 0%, #7869a8 50%, #514184 100%);
+}
+
+.header-logo img {
+  width: 230px;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav a,
+.header-nav button {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header-nav a:hover,
+.header-nav button:hover,
+.header-nav a.active {
+  color: #ffffff;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.enquire-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0 24px;
+  border-radius: 35px;
+  height: 52px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.enquire-btn svg {
+  font-size: 18px;
+}
+
+.responsive-enquire-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.responsive-enquire-btn svg {
+  font-size: 15px;
+}
+
+.enquire-btn:hover,
+.responsive-enquire-btn:hover,
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.icon-btn {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 31, 82, 0.24);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  outline: none;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.icon-btn svg {
+  font-size: 26px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.mobile-menu-item {
+  display: none;
+}
+
+/* =========================
+   ✅ FIX 1: 1400px TO 1201px — DESKTOP FULL HEADER (slightly smaller)
+========================= */
+
+@media (max-width: 1400px) {
+  .header-container {
+    height: 90px;
+    padding: 0 24px;         /* ✅ padding kam ki taaki items fit rahein */
+  }
+
+  .header-logo img {
+    width: 160px;            /* ✅ logo thoda chhota */
+  }
+
+  .header-nav ul {
+    gap: 28px;               /* ✅ nav gap kam ki */
+  }
+
+  .header-nav a,
+  .header-nav button {
+    font-size: 16px;         /* ✅ font thoda chhota */
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .enquire-btn {
+    height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .icon-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .icon-btn svg {
+    font-size: 20px;
+  }
+
+  /* ✅ IMPORTANT: menu-btn, responsive-enquire-btn HIDE rehenge — full header hi dikhega */
+  .menu-btn {
+    display: none;
+  }
+
+  .responsive-enquire-btn {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;           /* ✅ nav VISIBLE rahega */
+  }
+
+  .header-actions {
+    display: flex;           /* ✅ actions VISIBLE rahenge */
+  }
+}
+
+
+/* =========================
+   ✅ FIX 2: 1200px TO 1025px — STILL FULL DESKTOP HEADER
+   (Sirf padding/size thodi adjust ki, nav/actions HIDE NAHI kiye)
+========================= */
+
+@media (max-width: 1200px) {
+  .header-container {
+    height: 90px;
+    padding: 0 24px;         /* ✅ padding kam ki taaki items fit rahein */
+  }
+
+  .header-logo img {
+    width: 160px;            /* ✅ logo thoda chhota */
+  }
+
+  .header-nav ul {
+    gap: 28px;               /* ✅ nav gap kam ki */
+  }
+
+  .header-nav a,
+  .header-nav button {
+    font-size: 16px;         /* ✅ font thoda chhota */
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .enquire-btn {
+    height: 44px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  .icon-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .icon-btn svg {
+    font-size: 20px;
+  }
+
+  /* ✅ IMPORTANT: menu-btn, responsive-enquire-btn HIDE rehenge — full header hi dikhega */
+  .menu-btn {
+    display: none;
+  }
+
+  .responsive-enquire-btn {
+    display: none;
+  }
+
+  .header-nav {
+    display: flex;           /* ✅ nav VISIBLE rahega */
+  }
+
+  .header-actions {
+    display: flex;           /* ✅ actions VISIBLE rahenge */
+  }
+}
+
+/* =========================
+   ✅ FIX 3: 1024px AND BELOW — HAMBURGER MOBILE HEADER (SS2)
+========================= */
+
+@media (max-width: 1024px) {
+  .header-container {
+    height: 76px;
+    padding: 0 18px;
+    justify-content: flex-start;
+    gap: 12px;
+    position: relative;
+  }
+
+  /* ✅ Hamburger button dikhao */
+  .menu-btn {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(41, 31, 82, 0.24);
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    flex-shrink: 0;
+  }
+
+  .menu-btn svg {
+    font-size: 27px;
+  }
+
+  .header-logo img {
+    width: 122px;
+  }
+
+  /* ✅ Desktop actions aur nav HIDE karo */
+  .header-actions {
+    display: none !important;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  /* ✅ Mobile enquire button dikhao (right side) */
+  .responsive-enquire-btn {
+    display: flex;
+    margin-left: auto;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .responsive-enquire-btn svg {
+    font-size: 17px;
+  }
+
+  /* ✅ Menu active hone par full screen overlay */
+  .header.menu-active {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    background: linear-gradient(90deg, #4d3a83 0%, #7869a8 50%, #514184 100%);
+    z-index: 99999;
+    overflow: hidden;
+  }
+
+  /* ✅ Nav dropdown (white panel) */
+  .header-nav.active {
+    display: block;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    width: 100%;
+    height: calc(100dvh - 76px);
+    background: #ffffff;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .header-nav.active ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .header-nav.active li {
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    background: #ffffff;
+  }
+
+  .header-nav.active a,
+  .header-nav.active button {
+    display: block;
+    width: 100%;
+    padding: 18px 22px;
+    color: #1f1f1f;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    border: none;
+  }
+
+  .header-nav.active a:hover,
+  .header-nav.active button:hover {
+    background: #f7f5ff;
+    color: #514184;
+  }
+
+  .mobile-menu-item {
+    display: block;
+  }
+}
+
+/* =========================
+   768px AND BELOW
+========================= */
+
+@media (max-width: 768px) {
+  .header-container {
+    height: 70px;
+    padding: 0 14px;
+  }
+
+  .header-nav.active {
+    top: 70px;
+    height: calc(100dvh - 70px);
+  }
+
+  .header-logo img {
+    width: 108px;
+  }
+
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-btn svg {
+    font-size: 25px;
+  }
+
+  .responsive-enquire-btn {
+    padding: 11px 17px;
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   576px AND BELOW
+========================= */
+
+@media (max-width: 576px) {
+  .header-container {
+    height: 68px;
+    padding: 0 12px;
+  }
+
+  .header-nav.active {
+    top: 68px;
+    height: calc(100dvh - 68px);
+  }
+
+  .header-logo img {
+    width: 95px;
+  }
+
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-btn svg {
+    font-size: 24px;
+  }
+
+  .responsive-enquire-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .header-nav.active a,
+  .header-nav.active button {
+    padding: 17px 18px;
+    font-size: 15px;
+  }
+}
